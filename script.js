@@ -9,7 +9,7 @@ let highScores = JSON.parse(localStorage.getItem("highScores")) || []
 let timer = 90;
 let timerId;
 startEl.addEventListener("click", function () {
-        timerId = setInterval(function () {
+    timerId = setInterval(function () {
         timer -= 1;
         timerEl.textContent = ("Time remaining: " + timer);
         console.log(timer);
@@ -24,8 +24,6 @@ startEl.addEventListener("click", function () {
 
 
 
-
-
 let questions = [{ question: "1. JavaScript and Java are the same coding language", answers: ["True", "False"], correctAnswer: "False" },
 { question: "2. What datatype do we use to return the values true or false?", answers: ["Boolean", "String", "Constant", "Null"], correctAnswer: "Boolean" },
 { question: "3. What would you use to store multiple variables under a single name?", answers: ["Train", "Array", "Index", "Copy"], correctAnswer: "Array" },
@@ -34,8 +32,6 @@ let questions = [{ question: "1. JavaScript and Java are the same coding languag
 ]
 
 let currentQuestion = 0;
-
-// renderQuestion();
 
 function renderQuestion() {
     questionEl.textContent = questions[currentQuestion].question;
@@ -50,8 +46,6 @@ function renderQuestion() {
         button.textContent = questions[currentQuestion].answers[index]
         questionEl.append(button)
     }
-
-
 }
 
 
@@ -66,31 +60,23 @@ quizDiv.addEventListener("click", function (event) {
         console.log("correct answer:" + questions[currentQuestion].correctAnswer);
 
         if (event.target.innerText != questions[currentQuestion].correctAnswer) {
-            timer = timer - 15;
-            // currentQuestion++
-            // renderQuestion();
+            timer = timer - 10;
         }
-        if (timer <= 0 || currentQuestion === questions.length -1) {
+        if (timer <= 0 || currentQuestion === questions.length - 1) {
             endGame();
         }
-currentQuestion++;
-renderQuestion();
+        currentQuestion++;
+        renderQuestion();
 
     }
 
 })
 
 
-
-
 //time and initials stored in local storage
 
 // timer = timer -= 10;
 // clearInterval(timerId) //how to clear timer
-
-
-
-
 
 
 //some button that saves //localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))
