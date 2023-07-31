@@ -1,8 +1,21 @@
+* {
+   box-sizing: border-box; 
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 header {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
     color: blueviolet;
+}
+
+#quiz {
+    display: grid;
+    justify-content: center; 
+    align-items: center; 
+    /* width: 100vw;
+    height: 100vw; */
 }
 
 #highscores {
@@ -11,6 +24,20 @@ header {
     
 }
 
+#start {
+    height: 30px;
+    width: 100px;
+    color: brown;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: bisque;
+    border-color: aqua;
+    margin: 20px;
+  }
+
 #question {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
     font-size: 20px;
+    gap: 10px;
 }
