@@ -35,6 +35,10 @@ header {
     margin: 20px;
   }
 
+  .hide {
+    display: none;
+  }
+
 #question {
     display: grid;
     grid-template-columns: repeat(1, auto);
