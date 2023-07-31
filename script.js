@@ -9,14 +9,19 @@ let timerId = setInterval(function(){
     timer -= 1;
     console.log(timer);
 
+
+if (timer === 0) {
+    clearInterval(setInterval);
+    sendMessage("Time's up!");
+}
+
 }, 1000)
 
-let questions = [{question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
-                {question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
-                {question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
-                {question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
-                {question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
-                {question: "enter question here", answers: ["enter answers"], correctAnswer: "enter"},
+let questions = [{question: "JavaScript and Java are the same coding language", answers: ["True", "False"], correctAnswer: "False"},
+                {question: "What datatype do we use to return the values true or false?", answers: ["Boolean", "String", "Constant", "Null"], correctAnswer: "Boolean"},
+                {question: "What would you use to store multiple variables under a single name?", answers: ["Train", "Array", "Index", "Copy"], correctAnswer: "Array"},
+                {question: "What would we use to check the equality of two variables?", answers: ["=", "&&", "==="], correctAnswer: "==="},
+                {question: "Which of the following is used to alter the length of an array?", answers: ["push()", "kick()", "jump()", "move()"], correctAnswer: "push()"},
 ]
 
 let currentQuestion = 0;
@@ -53,8 +58,8 @@ quizDiv.addEventListener("click", function(event){
 
 //time and initials stored in local storage
 
-timer = timer -= 10;
-clearInterval(timerId) //how to clear timer
+// timer = timer -= 10;
+// clearInterval(timerId) //how to clear timer
 
 
 

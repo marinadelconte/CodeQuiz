@@ -1,0 +1,16 @@
+header {
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    color: blueviolet;
+}
+
+#highscores {
+    color: white;
+    background-color: blueviolet;
+    
+}
+
+#question {
+    font-size: 20px;
+}
