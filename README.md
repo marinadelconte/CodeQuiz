@@ -19,3 +19,4 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 To create the JavaScript Coding Quiz I used the following sources:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://www.youtube.com/watch?v=riDzcEQbX6k
