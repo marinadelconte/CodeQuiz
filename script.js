@@ -16,6 +16,22 @@ let questions = [{ question: "1. JavaScript and Java are the same coding languag
 
     let currentQuestion = 0;
 
+    
+function renderQuestion() {
+    questionEl.textContent = questions[currentQuestion].question;
+    console.log("Correct Answer:" + questions[currentQuestion].correctAnswer)
+
+    for (let index = 0; index < questions[currentQuestion].answers.length; index++) {
+        let button = document.createElement("button");
+        button.textContent = questions[currentQuestion].answers[index]
+        questionEl.append(button)
+    }
+}
+
+function endGame() {
+    clearInterval(timerId);
+    prompt("Enter your initials to save your time.");
+}
 
 startEl.addEventListener("click", function () {
     timerId = setInterval(function () {
@@ -31,7 +47,7 @@ startEl.addEventListener("click", function () {
 });
 
 quizDiv.addEventListener("click", function (event) {
-    if (event.target.matches("button")) {
+    if (event.target.matches("#start")) {
         let start = document.getElementById("start");
         start.style.display = "none";
         console.log(event.target)
@@ -39,42 +55,24 @@ quizDiv.addEventListener("click", function (event) {
         console.log("value:" + event.target.innerText);
         console.log("correct answer:" + questions[currentQuestion].correctAnswer);
 
+        
+     
+        renderQuestion();
+
+    }
+    else if(event.target.matches("button")){
+        currentQuestion++;
         if (event.target.innerText != questions[currentQuestion].correctAnswer) {
             timer = timer - 10;
         }
         if (timer <= 0 || currentQuestion === questions.length - 1) {
             endGame();
         }
-        currentQuestion++;
+
         renderQuestion();
 
     }
-
-    
-    function renderQuestion() {
-        questionEl.textContent = questions[currentQuestion].question;
-        console.log("Correct Answer:" + questions[currentQuestion].correctAnswer)
-
-        for (let index = 0; index < questions[currentQuestion].answers.length; index++) {
-            let button = document.createElement("button");
-            button.textContent = questions[currentQuestion].answers[index]
-            questionEl.append(button)
-        }
-    }
-
-
-    function endGame() {
-        clearInterval(timerId);
-        prompt("Enter your initials to save your time.");
-    }
+//time and initials stored in local storage
+//some button that saves //localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))
 
 })
-
-
-//time and initials stored in local storage
-
-// timer = timer -= 10;
-// clearInterval(timerId) //how to clear timer
-
-
-//some button that saves //localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))
