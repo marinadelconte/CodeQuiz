@@ -55,8 +55,7 @@ quizDiv.addEventListener("click", function (event) {
         console.log("value:" + event.target.innerText);
         console.log("correct answer:" + questions[currentQuestion].correctAnswer);
 
-        
-     
+          
         renderQuestion();
 
     }
@@ -65,14 +64,15 @@ quizDiv.addEventListener("click", function (event) {
         if (event.target.innerText != questions[currentQuestion].correctAnswer) {
             timer = timer - 10;
         }
-        if (timer <= 0 || currentQuestion === questions.length - 1) {
+        if (timer <= 0 || currentQuestion === questions.length) {
             endGame();
         }
 
         renderQuestion();
 
     }
-//time and initials stored in local storage
-//some button that saves //localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))
 
 })
+
+//time and initials stored in local storage
+//some button that saves //localStorage.setItem("highScores", JSON.stringify([{"initials": "dre", "score": 80}]))
