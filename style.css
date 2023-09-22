@@ -7,7 +7,7 @@ header {
     margin-top: 20px;
     font-size: 35px;
     text-align: center;
-    color: blueviolet;
+    color: rgb(22, 114, 99);
 }
 
 #quiz {
@@ -16,23 +16,34 @@ header {
     align-items: center; 
 }
 
-#highscores {
-    color: white;
-    background-color: blueviolet; 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.highScores {
+    margin-top: 15px;
+    align-items: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(73, 135, 194);
+    background-color: rgb(229, 234, 238); 
 }
 
 #start {
     height: 30px;
     width: 100px;
-    color: brown;
+    color: rgb(73, 135, 194);
     font-weight: bold;
     font-size: 18px;
-    background-color: bisque;
-    border-color: aqua;
+    background-color: rgb(229, 234, 238);
+    border: 1px solid aqua;
     margin: 20px;
     display: grid;
     justify-content: center;
     align-items: center;
+    cursor: grab;
   }
 
 
@@ -41,4 +52,11 @@ header {
     grid-template-columns: repeat(1, auto);
     font-size: 20px;
     gap: 10px;
+}
+
+.btn {
+    color: rgb(73, 135, 194);
+    border: 1px solid aqua;
+    cursor: grab;
+          
 }

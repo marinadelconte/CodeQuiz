@@ -30,7 +30,15 @@ function renderQuestion() {
 
 function endGame() {
     clearInterval(timerId);
-    prompt("Enter your initials to save your time.");
+    var scores = JSON.parse(localStorage.getItem("scores")) || [];
+   var initials = prompt("Enter your initials to save your time.");
+   var score = timer;
+   var scoreObject = {
+    initials:initials,
+    score:score
+   }
+scores.push(scoreObject);
+localStorage.setItem("scores", JSON.stringify(scores));
 }
 
 startEl.addEventListener("click", function () {
@@ -38,7 +46,7 @@ startEl.addEventListener("click", function () {
         timer--;
         timerEl.textContent = ("Time remaining: " + timer);
         console.log(timer);
-        if (timer === 0) {
+        if (timer <= 0) {
             clearInterval(timerId);
             alert("Time's up!");
         }
@@ -60,13 +68,16 @@ quizDiv.addEventListener("click", function (event) {
 
     }
     else if(event.target.matches("button")){
-        currentQuestion++;
+        
         if (event.target.innerText != questions[currentQuestion].correctAnswer) {
             timer = timer - 10;
+        } else {
+            currentQuestion++;
         }
         if (timer <= 0 || currentQuestion === questions.length) {
             endGame();
         }
+    
 
         renderQuestion();
 
