@@ -6,7 +6,10 @@ This application utilizes JavaScript, HTML and CSS to display a multiple quiz ch
 
 ## Usage
 
-The JavaScript Coding Quiz can be accessed via the following link: https://marinadelconte.github.io/CodeQuiz/ 
+The JavaScript Coding Quiz can be accessed via the following link: https://marinadelconte.github.io/CodeQuiz/
+
+Here is an image of the webpage: ![image](https://github.com/marinadelconte/CodeQuiz/assets/137957098/438cc773-0ed3-4cda-aeec-2fd8b79cf90d)
+
 
 ## Credits
 
